@@ -1,0 +1,56 @@
+@import "dialog.less";
+a.unsubscribeMail {
+  text-decoration:none;
+  cursor:pointer;
+  padding:0 10px;
+  margin-right:2px;
+}
+
+.greenButtonBg{
+  color:white;
+  background:#3d9400;
+  background:-webkit-gradient(linear,left bottom,left top,color-stop(0,#3d9400),color-stop(1,#398a00));
+  background:-ms-linear-gradient(bottom,#3d9400,#398a00);
+  background:-moz-linear-gradient(center bottom,#3d9400 0,#398a00 100%);
+  background-color:#3d9400;
+  border:1px solid #29691d;
+}
+.greenButtonBg:active,.greenButtonBg:hover {
+   color:white;
+   background:#3d9400;
+   background:-webkit-gradient(linear,left bottom,left top,color-stop(0,#327b00),color-stop(1,#327b00));
+   background:-ms-linear-gradient(bottom,#327b00,#327b00);
+   background:-moz-linear-gradient(center bottom,#327b00 0,#327b00 100%)
+}
+a.aboutButton {
+    display:inline-block;
+    position:relative;
+    margin-right:20px;
+    color:#ababab;
+    height:27px;
+    line-height:27px;
+    font-size:17px;
+    text-decoration:none;
+}
+a.aboutButton:hover {
+    color:#444;
+}
+.unsubscribeOverlay {
+    width:80% !important;
+    height:60% !important;
+
+    .dBc {
+      position:absolute;
+      top:75px;
+      bottom:0px;
+      right:0px;
+      left:0px;
+    }
+
+    iframe {
+      width:100%;
+      height:100%;
+      border:none;
+      border-top:1px solid #ccc;
+    }
+}

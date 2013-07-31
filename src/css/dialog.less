@@ -1,0 +1,85 @@
+@import "elements.less";
+@greyBorder: rgb(217,217,217);
+@grayText: #888;
+@lightBlueBackground: #f3f6fb;
+@white:#fff;
+
+// Dialog Box
+.dBbg {
+// Dialog Background overlay
+  width:100%;
+  height:100%;
+  background-color:rgba(255,255,255,0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:3000;
+}
+
+.dBcT {
+// Dialog Box Container
+  display: none;
+  position: absolute;
+  z-index: 5000;
+  top: 50%;
+  left: 50%;
+  //google width override because of the edit dialog buttons, other solution?
+  width: 500px;
+}
+////////////////////////////////////////////////////////////////////////////////
+// Popup Generic Style
+////////////////////////////////////////////////////////////////////////////////
+
+// assignee selector popup
+div.stPopup {
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px;
+  z-index: 100;
+  background-color: #f8f8f8;
+  .rounded(2px);
+  .box-shadow(0 10px 16px rgba(0,0,0,.2));
+  width: auto;
+  height: auto;
+  border: 1px solid #dcdcdc;
+  p {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .stNoRecipients {
+
+  }
+}
+
+.stPopup:after,.stPopup:before {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
+.stPopup:after {
+  border: 5px solid transparent;
+  border-top-color: #f8f8f8;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+}
+
+.stPopup:before {
+  border: 7px solid transparent;
+  border-top-color: #dcdcdc;
+  top: 100%;
+  left: 50%;
+  margin-left: -7px;
+}
+
+
+.stDialogTitle {
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+
