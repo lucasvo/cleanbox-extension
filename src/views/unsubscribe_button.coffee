@@ -23,7 +23,7 @@ define [
 
     initialize: (options) ->
       @link = options.link
-      @text = "Unsuscribe"
+      @text = "Unsubscribe"
 
       return @
 
