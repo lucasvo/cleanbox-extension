@@ -152,7 +152,7 @@ define [
       @trigger("show")
       @
 
-    hide: ->
+    hide: =>
       if @_deferredRender # Handle deferred dialog
         clearInterval(@_poller) # Cancel deferred dialog
         delete @_deferredRenderVisible

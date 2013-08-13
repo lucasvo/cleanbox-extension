@@ -27,7 +27,7 @@ define [
     className: 'J-J5-Ji'
     template: '''
     <a class="unsubscribeButton"></a>
-    <a class="aboutButton" href="#">?<!--❀--></a>  
+    <a class="aboutButton" href="#">?<!--❀ --></a>
     '''
 
     initialize: (options) ->
