@@ -15,7 +15,6 @@ define [
 
         # Grab the email address from GLOBALS[10]
         # window.opener.GLOBALS if a new Compose instance is opened
-        console.log GLOBALS
         @emailAddress = GMAIL_GLOBALS?[10]
         @requestToken = GMAIL_GLOBALS?[9]
         if not @emailAddress
@@ -70,7 +69,7 @@ define [
       }
 
     messageHandler: (e) =>
-      if e.data.cleanbox
+      if e.data.cleanbox_request
         frame = @getUnsubscribeFrame()
         frame.contentWindow.postMessage(@messagePayload(), '*')
 

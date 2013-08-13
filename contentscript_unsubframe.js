@@ -41,7 +41,6 @@ s.onload = function() {
 };
 h.appendChild(s);
 }
-
 var parseResponse;
 parseResponse = function (e) {
   // Verify the message response and trigger our unsubscribe script on receiving a message
@@ -56,7 +55,9 @@ addEventListener('message', function (e) {
 });
 // Send message to parent frame
 window.onload = function() {
+loadApp();
+console.log('loaded');
   if (window != top) {
-    window.parent.postMessage({"cleanbox":true}, '*');
+    window.parent.postMessage({"cleanbox_request":true}, '*');
   };
 };
