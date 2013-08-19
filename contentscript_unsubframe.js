@@ -55,8 +55,6 @@ addEventListener('message', function (e) {
 });
 // Send message to parent frame
 window.onload = function() {
-loadApp();
-console.log('loaded');
   if (window != top) {
     window.parent.postMessage({"cleanbox_request":true}, '*');
   };
