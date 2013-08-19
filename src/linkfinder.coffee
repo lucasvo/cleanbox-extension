@@ -20,7 +20,7 @@ define [
       unsub = @simple_link_content.exec($(link).attr('href'))
       if unsub then return link
          
-    find: (cb, conv_id) ->
+    find: (cb, req_info) ->
       links = gmailCanvas.$(".ads a")
 # ### Direct Match
 # Reverse loop is a performance tweak because emails are more likely to contain unsubscribe links at the end of emails
@@ -35,7 +35,7 @@ define [
       res = @proximitySearch()
       if res then return cb(res.attr('href'))
 
-      res = @findUnsubscribeHeaders(cb, conv_id)
+      res = @findUnsubscribeHeaders(cb, req_info)
 
 # ### Proximity Search
     proxLinkFilter: /click/i
@@ -77,7 +77,7 @@ define [
 
 # ### List Header Search
     findUnsubscribeHeaders: (cb, req_info) ->
-      $.get("https://mail.google.com/mail/u/0/?ui=2&ik=#{req_info[0]}&view=om&th=#{req_info[1]}", (text) =>
+      $.get("https://mail.google.com/mail/u/#{req_info[0]}/?ui=2&ik=#{req_info[1]}&view=om&th=#{req_info[2]}", (text) =>
         @parseRawMessage(text, cb)
       )
 

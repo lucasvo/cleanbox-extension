@@ -17,6 +17,8 @@ define [
         # window.opener.GLOBALS if a new Compose instance is opened
         @emailAddress = GMAIL_GLOBALS?[10]
         @requestToken = GMAIL_GLOBALS?[9]
+        @sessionNumber = document.location.href.match(/\/u\/\d\//)[0][3]
+
         if not @emailAddress
           if document.readyState == 'complete'
             console.log('CleanBox: Unable to detect email address')
@@ -40,7 +42,7 @@ define [
         cb = (elem_subsc) =>
           if elem_subsc
             @renderToolbarArea(elem_subsc)
-        elem_subsc = linkFinder.find(cb, [@requestToken, @getConversationIDfromURL()])
+        elem_subsc = linkFinder.find(cb, [@sessionNumber, @requestToken, @getConversationIDfromURL()])
 
     renderToolbarArea: (link) ->
       @toolbar = new ToolbarArea({link: link}).render()
